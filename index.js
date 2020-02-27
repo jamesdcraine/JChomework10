@@ -48,7 +48,7 @@ function initDatabase() {
       })
 }
 
-function add() {
+function addInfo() {
   inquirer
       .prompt(
           {
@@ -61,21 +61,21 @@ function add() {
           switch (add_info) {
 
             case "employee":
-                add_employee();
+                addEmployee();
                 break;
 
             case "role":
-                add_role();
+                addRole();
                 break;
 
             case "department":
-                add_department();
+                addDepartment();
                 break;
           }
       })
 
 }
-function add_employee() {
+function addEmployee() {
   inquirer
       .prompt(
           {
