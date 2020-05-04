@@ -244,6 +244,32 @@ function updateInfo() {
 //   });
 // }
 
+// Create a new movie
+app.post("/api/movies", (req, res) => {
+  connection.query("INSERT INTO movies (movie) VALUES (?)", [req.body.movie], (err, result) => {
+    if (err) {
+      return res.status(500).end();
+    }
+
+    // Send back the ID of the new movie
+    res.json({ id: result.insertId });
+    console.log({ id: result.insertId });
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // view employee function
 
 function viewEmployee() {
